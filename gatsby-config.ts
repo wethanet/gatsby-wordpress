@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Playground`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: process.env.GATSBY_SITE_URL
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -12,7 +12,7 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-wordpress',
     options: {
-      "url": "http://wordpressplayground.local/graphql"
+      "url": process.env.GATSBY_WP_URL
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
